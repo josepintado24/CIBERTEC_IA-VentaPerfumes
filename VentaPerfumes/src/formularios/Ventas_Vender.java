@@ -170,7 +170,8 @@ public class Ventas_Vender extends JFrame implements ActionListener {
 	}
 	String nombrePerfumeActual;
 	double precioUnitario;
-	int ordenCompra;
+	
+	
 	private JLabel label;
 	private JLabel label_1;
 	private JLabel lblVentasvender;
@@ -249,7 +250,7 @@ public class Ventas_Vender extends JFrame implements ActionListener {
 	
 	String premioSorpresa(){
 		String sorpresa="No corresponde";
-		if (ordenCompra>=BDPerfumes.numeroClienteSorpresa){
+		if (BDReportes.numClientes>=BDPerfumes.numeroClienteSorpresa){
 			sorpresa=BDPerfumes.premioSorpresa;
 		}
 			
@@ -261,30 +262,35 @@ public class Ventas_Vender extends JFrame implements ActionListener {
 		case 0:
 			BDReportes.cantPerfumesVenta0+=getCantidad();
 			BDReportes.importeAcumulado0+=importePagar();
+			BDReportes.cantidadVentas0++;
 			break;
 		case 1:
 			BDReportes.cantPerfumesVenta1+=getCantidad();
 			BDReportes.importeAcumulado1+=importePagar();
+			BDReportes.cantidadVentas1++;
 			break;
 		case 2:
 			BDReportes.cantPerfumesVenta2+=getCantidad();
 			BDReportes.importeAcumulado2+=importePagar();
+			BDReportes.cantidadVentas2++;
 			break;
 		case 3:
 			BDReportes.cantPerfumesVenta3+=getCantidad();
 			BDReportes.importeAcumulado3+=importePagar();
+			BDReportes.cantidadVentas3++;
 			break;
 		case 4:
 			BDReportes.cantPerfumesVenta4+=getCantidad();
 			BDReportes.importeAcumulado4+=importePagar();
+			BDReportes.cantidadVentas4++;
 			break;
 		}
 	
 	}
 	void mostrar(){
 		llenarReportes();
-		ordenCompra++;
-		textArea.append("\t\t\tN° Clientes: "+ordenCompra);
+		BDReportes.numClientes++;
+		textArea.append("\t\t\tN° Clientes: "+BDReportes.numClientes);
 		textArea.append("\nNombre Perfume\t: "+nombrePerfumeActual);
 		textArea.append("\nPrecio Unitario\t\t: "+precioUnitario);
 		textArea.append("\nCantidad de unidades\t: "+getCantidad());
