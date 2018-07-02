@@ -11,7 +11,7 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import metodos.*;
+
 import datosProyecto.*;
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -21,6 +21,8 @@ import java.awt.Font;
 import javax.swing.border.MatteBorder;
 import java.awt.Toolkit;
 import javax.swing.JButton;
+import javax.swing.border.LineBorder;
+import java.awt.SystemColor;
 
 public class Mantenimiento_Consultar extends JFrame implements ActionListener {
 
@@ -41,6 +43,7 @@ public class Mantenimiento_Consultar extends JFrame implements ActionListener {
 	private JLabel label_3;
 	private JTextField txtCasa;
 	private JButton btnCerrar;
+	private JLabel lblMantenimientoconsultar;
 
 	/**
 	 * Launch the application.
@@ -66,14 +69,16 @@ public class Mantenimiento_Consultar extends JFrame implements ActionListener {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Mantenimiento_Consultar.class.getResource("/icons/Buscar30px_1.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 560, 509);
+		setUndecorated(true);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setForeground(Color.WHITE);
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBorder(new LineBorder(new Color(0, 0, 0)));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		txtCasa = new JTextField();
+		txtCasa.setText(BDPerfumes.casa0);
 		txtCasa.setHorizontalAlignment(SwingConstants.LEFT);
 		txtCasa.setForeground(new Color(0, 0, 128));
 		txtCasa.setFont(new Font("Yu Gothic UI Light", Font.BOLD, 14));
@@ -81,22 +86,23 @@ public class Mantenimiento_Consultar extends JFrame implements ActionListener {
 		txtCasa.setColumns(10);
 		txtCasa.setBorder(new MatteBorder(0, 0, 1, 0, (Color) new Color(0, 0, 0)));
 		txtCasa.setBackground(Color.WHITE);
-		txtCasa.setBounds(144, 387, 155, 26);
+		txtCasa.setBounds(142, 428, 155, 26);
 		contentPane.add(txtCasa);
 		
 		lblS = new JLabel("S/.");
 		lblS.setFont(new Font("Yu Gothic UI Light", Font.BOLD, 14));
-		lblS.setBounds(120, 137, 18, 20);
+		lblS.setBounds(118, 178, 18, 20);
 		contentPane.add(lblS);
 		
 		txtPrecio = new JTextField();
+		txtPrecio.setText(BDPerfumes.precio0+"");
 		txtPrecio.setBackground(new Color(255, 255, 255));
 		txtPrecio.setBorder(new MatteBorder(0, 0, 1, 0, (Color) new Color(0, 0, 0)));
 		txtPrecio.setHorizontalAlignment(SwingConstants.LEFT);
 		txtPrecio.setEditable(false);
 		txtPrecio.setForeground(new Color(0, 0, 128));
 		txtPrecio.setFont(new Font("Yu Gothic UI Light", Font.BOLD, 14));
-		txtPrecio.setBounds(144, 136, 155, 26);
+		txtPrecio.setBounds(142, 177, 155, 26);
 		contentPane.add(txtPrecio);
 		txtPrecio.setColumns(10);
 		
@@ -107,31 +113,32 @@ public class Mantenimiento_Consultar extends JFrame implements ActionListener {
 		cboNombre.setForeground(new Color(0, 0, 153));
 		cboNombre.addActionListener(this);
 		cboNombre.setModel(new DefaultComboBoxModel(new String[] {"ALCAZAR", "ALLURE", "AQUA RUSH", "ENVY", "ALAIA"}));
-		cboNombre.setBounds(144, 48, 124, 20);
+		cboNombre.setBounds(142, 89, 124, 20);
 		contentPane.add(cboNombre);
 		
 		label = new JLabel("");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setIcon(new ImageIcon(Mantenimiento_Consultar.class.getResource("/icons/Perfume30px.png")));
-		label.setBounds(109, 33, 39, 50);
+		label.setBounds(107, 74, 39, 50);
 		contentPane.add(label);
 		
 		lblNombre = new JLabel("Nombre");
 		lblNombre.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
-		lblNombre.setBounds(122, 23, 76, 14);
+		lblNombre.setBounds(120, 64, 76, 14);
 		contentPane.add(lblNombre);
 		
 		lblPrecio = new JLabel("Precio ");
 		lblPrecio.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
-		lblPrecio.setBounds(120, 108, 76, 14);
+		lblPrecio.setBounds(118, 149, 76, 14);
 		contentPane.add(lblPrecio);
 		
 		lblContenido = new JLabel("Contenido");
 		lblContenido.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
-		lblContenido.setBounds(120, 197, 76, 14);
+		lblContenido.setBounds(118, 238, 76, 14);
 		contentPane.add(lblContenido);
 		
 		txtContenido = new JTextField();
+		txtContenido.setText(BDPerfumes.contenido0+"");
 		txtContenido.setHorizontalAlignment(SwingConstants.LEFT);
 		txtContenido.setForeground(new Color(0, 0, 128));
 		txtContenido.setFont(new Font("Yu Gothic UI Light", Font.BOLD, 14));
@@ -139,16 +146,17 @@ public class Mantenimiento_Consultar extends JFrame implements ActionListener {
 		txtContenido.setColumns(10);
 		txtContenido.setBorder(new MatteBorder(0, 0, 1, 0, (Color) new Color(0, 0, 0)));
 		txtContenido.setBackground(Color.WHITE);
-		txtContenido.setBounds(144, 222, 155, 26);
+		txtContenido.setBounds(142, 263, 155, 26);
 		contentPane.add(txtContenido);
 		
 		label_1 = new JLabel("");
 		label_1.setIcon(new ImageIcon(Mantenimiento_Consultar.class.getResource("/icons/Contenido30px.png")));
 		label_1.setFont(new Font("Yu Gothic UI Light", Font.BOLD, 14));
-		label_1.setBounds(116, 219, 32, 30);
+		label_1.setBounds(114, 260, 32, 30);
 		contentPane.add(label_1);
 		
 		txtLanzamiento = new JTextField();
+		txtLanzamiento.setText(BDPerfumes.año0+"");
 		txtLanzamiento.setHorizontalAlignment(SwingConstants.LEFT);
 		txtLanzamiento.setForeground(new Color(0, 0, 128));
 		txtLanzamiento.setFont(new Font("Yu Gothic UI Light", Font.BOLD, 14));
@@ -156,29 +164,29 @@ public class Mantenimiento_Consultar extends JFrame implements ActionListener {
 		txtLanzamiento.setColumns(10);
 		txtLanzamiento.setBorder(new MatteBorder(0, 0, 1, 0, (Color) new Color(0, 0, 0)));
 		txtLanzamiento.setBackground(Color.WHITE);
-		txtLanzamiento.setBounds(144, 308, 155, 26);
+		txtLanzamiento.setBounds(142, 349, 155, 26);
 		contentPane.add(txtLanzamiento);
 		
 		label_2 = new JLabel("");
 		label_2.setIcon(new ImageIcon(Mantenimiento_Consultar.class.getResource("/icons/calendario.png")));
 		label_2.setFont(new Font("Yu Gothic UI Light", Font.BOLD, 14));
-		label_2.setBounds(109, 299, 39, 35);
+		label_2.setBounds(107, 340, 39, 35);
 		contentPane.add(label_2);
 		
 		lblAoDeLanzamiento = new JLabel("A\u00F1o de lanzamiento");
 		lblAoDeLanzamiento.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
-		lblAoDeLanzamiento.setBounds(120, 283, 124, 14);
+		lblAoDeLanzamiento.setBounds(118, 324, 124, 14);
 		contentPane.add(lblAoDeLanzamiento);
 		
 		lblCasa = new JLabel("Casa");
 		lblCasa.setFont(new Font("Yu Gothic UI", Font.PLAIN, 14));
-		lblCasa.setBounds(122, 366, 76, 14);
+		lblCasa.setBounds(120, 407, 76, 14);
 		contentPane.add(lblCasa);
 		
 		label_3 = new JLabel("");
 		label_3.setIcon(new ImageIcon(Mantenimiento_Consultar.class.getResource("/icons/casa30px_1.png")));
 		label_3.setFont(new Font("Yu Gothic UI Light", Font.BOLD, 14));
-		label_3.setBounds(109, 388, 29, 25);
+		label_3.setBounds(107, 429, 29, 25);
 		contentPane.add(label_3);
 		
 		btnCerrar = new JButton("Cerrar");
@@ -186,8 +194,14 @@ public class Mantenimiento_Consultar extends JFrame implements ActionListener {
 		btnCerrar.setForeground(new Color(255, 255, 255));
 		btnCerrar.setFont(new Font("Yu Gothic UI", Font.ITALIC, 14));
 		btnCerrar.setBackground(new Color(0, 128, 0));
-		btnCerrar.setBounds(373, 387, 147, 26);
+		btnCerrar.setBounds(390, 58, 147, 26);
 		contentPane.add(btnCerrar);
+		
+		lblMantenimientoconsultar = new JLabel("Mantenimiento/Consultar");
+		lblMantenimientoconsultar.setForeground(SystemColor.textInactiveText);
+		lblMantenimientoconsultar.setFont(new Font("Yu Gothic UI", Font.BOLD, 16));
+		lblMantenimientoconsultar.setBounds(29, 11, 456, 26);
+		contentPane.add(lblMantenimientoconsultar);
 	}
 	public void actionPerformed(ActionEvent arg0) {
 		if (arg0.getSource() == btnCerrar) {
@@ -197,8 +211,13 @@ public class Mantenimiento_Consultar extends JFrame implements ActionListener {
 			actionPerformedCboNombre(arg0);
 		}
 	}
+	
+	int indiceCombo(){
+		return cboNombre.getSelectedIndex();
+	}
+	
 	protected void actionPerformedCboNombre(ActionEvent arg0) {
-		switch (Ajustes.index(cboNombre)) {
+		switch (indiceCombo()) {
 		case 0:
 			txtPrecio.setText(BDPerfumes.precio0+"");
 			txtLanzamiento.setText(BDPerfumes.año0+"");
