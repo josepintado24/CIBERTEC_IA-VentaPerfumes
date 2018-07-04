@@ -159,7 +159,7 @@ public class Ventas_GenerarReportes extends JFrame implements ActionListener {
 		txtS.append("\nCantidad total de unidades vendidas\t: "+BDReportes.cantPerfumesVenta4+"("+(BDReportes.cantPerfumesVenta4-BDPerfumes.cantidadOptima)+" más que la cantidad óptima)");
 	}
 	double promedio(){
-		return (BDPerfumes.precio0+BDPerfumes.precio1+BDPerfumes.precio1+BDPerfumes.precio2+BDPerfumes.precio3+BDPerfumes.precio4)/5;
+		return (BDPerfumes.precio0+BDPerfumes.precio1+BDPerfumes.precio2+BDPerfumes.precio3+BDPerfumes.precio4)/5;
 	}
 	void precioRelacionPromedio(){
 		txtS.append("Precio en relación al promedio\n");
@@ -197,8 +197,109 @@ public class Ventas_GenerarReportes extends JFrame implements ActionListener {
 		
 		return mensaje;
 	}
+	double precioMinimo(){
+		double minimo=0;
+		if (BDPerfumes.precio0<BDPerfumes.precio1 && (BDPerfumes.precio0<BDPerfumes.precio2)&& (BDPerfumes.precio0<BDPerfumes.precio3)&& (BDPerfumes.precio0<BDPerfumes.precio4)){
+			minimo=BDPerfumes.precio0;
+		}
+		
+		if (BDPerfumes.precio1<BDPerfumes.precio0 && (BDPerfumes.precio1<BDPerfumes.precio2)&& (BDPerfumes.precio1<BDPerfumes.precio3)&& (BDPerfumes.precio1<BDPerfumes.precio4)){
+			minimo=BDPerfumes.precio1;
+		}
+		if (BDPerfumes.precio2<BDPerfumes.precio0 && (BDPerfumes.precio2<BDPerfumes.precio1)&& (BDPerfumes.precio2<BDPerfumes.precio3)&& (BDPerfumes.precio2<BDPerfumes.precio4)){
+			minimo=BDPerfumes.precio2;
+		}
+		if (BDPerfumes.precio3<BDPerfumes.precio0 && (BDPerfumes.precio3<BDPerfumes.precio1)&& (BDPerfumes.precio3<BDPerfumes.precio2)&& (BDPerfumes.precio3<BDPerfumes.precio4)){
+			minimo=BDPerfumes.precio3;
+		}
+		if (BDPerfumes.precio4<BDPerfumes.precio0 && (BDPerfumes.precio4<BDPerfumes.precio1)&& (BDPerfumes.precio4<BDPerfumes.precio2)&& (BDPerfumes.precio4<BDPerfumes.precio3)){
+			minimo=BDPerfumes.precio4;
+		}
+		
+		return minimo;
+	}
+	double Contenidopromedio(){
+		return (BDPerfumes.contenido0+BDPerfumes.contenido1+BDPerfumes.contenido2+BDPerfumes.contenido3+BDPerfumes.contenido4)/5;
+	}
+	double ContenidoMinimo(){
+		double minimo=0;
+		if (BDPerfumes.contenido0<BDPerfumes.contenido1 && (BDPerfumes.contenido0<BDPerfumes.contenido2)&& (BDPerfumes.contenido0<BDPerfumes.contenido3)&& (BDPerfumes.contenido0<BDPerfumes.contenido4)){
+			minimo=BDPerfumes.contenido0;
+		}
+		
+		if (BDPerfumes.contenido1<BDPerfumes.contenido0 && (BDPerfumes.contenido1<BDPerfumes.contenido2)&& (BDPerfumes.contenido1<BDPerfumes.contenido3)&& (BDPerfumes.contenido1<BDPerfumes.contenido4)){
+			minimo=BDPerfumes.contenido1;
+		}
+		if (BDPerfumes.contenido2<BDPerfumes.contenido0 && (BDPerfumes.contenido2<BDPerfumes.contenido1)&& (BDPerfumes.contenido2<BDPerfumes.contenido3)&& (BDPerfumes.contenido2<BDPerfumes.contenido4)){
+			minimo=BDPerfumes.contenido2;
+		}
+		if (BDPerfumes.contenido3<BDPerfumes.contenido0 && (BDPerfumes.contenido3<BDPerfumes.contenido1)&& (BDPerfumes.contenido3<BDPerfumes.contenido2)&& (BDPerfumes.contenido3<BDPerfumes.contenido4)){
+			minimo=BDPerfumes.contenido3;
+		}
+		if (BDPerfumes.contenido4<BDPerfumes.contenido0 && (BDPerfumes.contenido4<BDPerfumes.contenido1)&& (BDPerfumes.contenido4<BDPerfumes.contenido2)&& (BDPerfumes.contenido4<BDPerfumes.contenido3)){
+			minimo=BDPerfumes.contenido4;
+		}
+		
+		return minimo;
+	}
 	
+	double precioMaximo(){
+		double maximo=0;
+		if (BDPerfumes.precio0>BDPerfumes.precio1 && (BDPerfumes.precio0>BDPerfumes.precio2)&& (BDPerfumes.precio0>BDPerfumes.precio3)&& (BDPerfumes.precio0>BDPerfumes.precio4)){
+			maximo=BDPerfumes.precio0;
+		}
+		
+		if (BDPerfumes.precio1>BDPerfumes.precio0 && (BDPerfumes.precio1>BDPerfumes.precio2)&& (BDPerfumes.precio1>BDPerfumes.precio3)&& (BDPerfumes.precio1>BDPerfumes.precio4)){
+			maximo=BDPerfumes.precio1;
+		}
+		if (BDPerfumes.precio2>BDPerfumes.precio0 && (BDPerfumes.precio2>BDPerfumes.precio1)&& (BDPerfumes.precio2>BDPerfumes.precio3)&& (BDPerfumes.precio2>BDPerfumes.precio4)){
+			maximo=BDPerfumes.precio2;
+		}
+		if (BDPerfumes.precio3>BDPerfumes.precio0 && (BDPerfumes.precio3>BDPerfumes.precio1)&& (BDPerfumes.precio3>BDPerfumes.precio2)&& (BDPerfumes.precio3>BDPerfumes.precio4)){
+			maximo=BDPerfumes.precio3;
+		}
+		if (BDPerfumes.precio4>BDPerfumes.precio0 && (BDPerfumes.precio4>BDPerfumes.precio1)&& (BDPerfumes.precio4>BDPerfumes.precio2)&& (BDPerfumes.precio4>BDPerfumes.precio3)){
+			maximo=BDPerfumes.precio4;
+		}
+		
+		return maximo;
+	}
 	
+	double ContenidoMaximo(){
+		double maximo=0;
+		if (BDPerfumes.contenido0>BDPerfumes.contenido1 && (BDPerfumes.contenido0>BDPerfumes.contenido2)&& (BDPerfumes.contenido0>BDPerfumes.contenido3)&& (BDPerfumes.contenido0>BDPerfumes.contenido4)){
+			maximo=BDPerfumes.contenido0;
+		}
+		
+		if (BDPerfumes.contenido1>BDPerfumes.contenido0 && (BDPerfumes.contenido1>BDPerfumes.contenido2)&& (BDPerfumes.contenido1>BDPerfumes.contenido3)&& (BDPerfumes.contenido1>BDPerfumes.contenido4)){
+			maximo=BDPerfumes.contenido1;
+		}
+		if (BDPerfumes.contenido2>BDPerfumes.contenido0 && (BDPerfumes.contenido2>BDPerfumes.contenido1)&& (BDPerfumes.contenido2>BDPerfumes.contenido3)&& (BDPerfumes.contenido2>BDPerfumes.contenido4)){
+			maximo=BDPerfumes.contenido2;
+		}
+		if (BDPerfumes.contenido3>BDPerfumes.contenido0 && (BDPerfumes.contenido3>BDPerfumes.contenido1)&& (BDPerfumes.contenido3>BDPerfumes.contenido2)&& (BDPerfumes.contenido3>BDPerfumes.contenido4)){
+			maximo=BDPerfumes.contenido3;
+		}
+		if (BDPerfumes.contenido4>BDPerfumes.contenido0 && (BDPerfumes.contenido4>BDPerfumes.contenido1)&& (BDPerfumes.contenido4>BDPerfumes.contenido2)&& (BDPerfumes.contenido4>BDPerfumes.contenido3)){
+			maximo=BDPerfumes.contenido4;
+		}
+		
+		return maximo;
+	}
+	void promedioMaximiMinimo(){
+		txtS.append("Promedio, Maximo y Minimo\n");
+		txtS.append("\nPrecio Promedio\t: S/ "+promedio());
+		txtS.append("\nPrecio Minimo\t\t: S/ "+ precioMinimo());
+		txtS.append("\nPrecio Mmaximo\t: S/ "+ precioMaximo());
+		
+		txtS.append("\n\nPrecio Promedio\t: "+Contenidopromedio()+" ml");
+		txtS.append("\nPrecio Minimo\t\t: "+ ContenidoMinimo()+" ml");
+		txtS.append("\nPrecio Mmaximo\t: "+ ContenidoMaximo()+" ml");
+		
+		
+		
+		
+	}
 	protected void actionPerformedComboBox(ActionEvent e) {
 		switch (Tipoindex()) {
 		case 0:
@@ -225,13 +326,12 @@ public class Ventas_GenerarReportes extends JFrame implements ActionListener {
 			
 			break;
 		case 2:
+			txtS.setText("");
 			precioRelacionPromedio();
 			break;
 		case 3:
-			
-			break;
-		case 4:
-			
+			txtS.setText("");
+			promedioMaximiMinimo();
 			break;
 		}
 		
