@@ -133,18 +133,63 @@ public class Ventas_GenerarReportes extends JFrame implements ActionListener {
 		txtS.append("\nImporte total acumulado\t\t :"+BDReportes.importeAcumulado4);
 	}
 	
-	void mostrarVentaOptima(){
-		txtS.setText("");
-		txtS.append("Perfumes con venta Óptima\n");
-		txtS.append("\nNombre\t\t: "+BDPerfumes.nombre0);
-		txtS.append("\nCantidad total de unidades vendidas\t: "+BDReportes.cantidadVentas0+"("+(BDReportes.cantidadVentas0-BDPerfumes.cantidadOptima)+" más que la cantidad óptima)");
+	void mostrarVentaOptima0(){
+		
+		txtS.append("\n\nNombre\t\t: "+BDPerfumes.nombre0);
+		txtS.append("\nCantidad total de unidades vendidas\t: "+BDReportes.cantPerfumesVenta0+"("+(BDReportes.cantPerfumesVenta0-BDPerfumes.cantidadOptima)+" más que la cantidad óptima)");
 	}
+	void mostrarVentaOptima1(){
+			
+		txtS.append("\n\nNombre\t\t: "+BDPerfumes.nombre1);
+		txtS.append("\nCantidad total de unidades vendidas\t: "+BDReportes.cantPerfumesVenta1+"("+(BDReportes.cantPerfumesVenta1-BDPerfumes.cantidadOptima)+" más que la cantidad óptima)");
+	}
+	void mostrarVentaOptima2(){
+		
+		txtS.append("\n\nNombre\t\t: "+BDPerfumes.nombre2);
+		txtS.append("\nCantidad total de unidades vendidas\t: "+BDReportes.cantPerfumesVenta2+"("+(BDReportes.cantPerfumesVenta2-BDPerfumes.cantidadOptima)+" más que la cantidad óptima)");
+	}
+	void mostrarVentaOptima3(){
+	
+		txtS.append("\n\nNombre\t\t: "+BDPerfumes.nombre3);
+		txtS.append("\nCantidad total de unidades vendidas\t: "+BDReportes.cantPerfumesVenta3+"("+(BDReportes.cantPerfumesVenta3-BDPerfumes.cantidadOptima)+" más que la cantidad óptima)");
+	}
+	void mostrarVentaOptima4(){
+	
+		txtS.append("\n\nNombre\t\t: "+BDPerfumes.nombre4);
+		txtS.append("\nCantidad total de unidades vendidas\t: "+BDReportes.cantPerfumesVenta4+"("+(BDReportes.cantPerfumesVenta4-BDPerfumes.cantidadOptima)+" más que la cantidad óptima)");
+	}
+	
+	void precioRelacionPromedio(){
+		String mensaje="menor al promedio";
+		if ()
+		
+	}
+	
+	
 	protected void actionPerformedComboBox(ActionEvent e) {
 		switch (Tipoindex()) {
 		case 0:
 			mostrarVentaPerfumes();
+			break;
 		case 1:
-			mostrarVentaOptima();
+			txtS.setText("");
+			txtS.append("Perfumes con venta Óptima\n");
+			if (BDReportes.cantPerfumesVenta0>BDPerfumes.cantidadOptima){
+				mostrarVentaOptima0();
+			}
+			if (BDReportes.cantPerfumesVenta1>BDPerfumes.cantidadOptima){
+				mostrarVentaOptima1();
+			}
+			if (BDReportes.cantPerfumesVenta2>BDPerfumes.cantidadOptima){
+				mostrarVentaOptima2();
+			}
+			if (BDReportes.cantPerfumesVenta3>BDPerfumes.cantidadOptima){
+				mostrarVentaOptima3();
+			}
+			if (BDReportes.cantPerfumesVenta4>BDPerfumes.cantidadOptima){
+				mostrarVentaOptima4();
+			}
+			
 			break;
 		case 2:
 			

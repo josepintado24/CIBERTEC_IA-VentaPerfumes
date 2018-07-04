@@ -163,7 +163,7 @@ public class Login extends JFrame implements MouseListener, ActionListener {
 		String contraseña=txtContraseña.getText();
 		
 		if ((usuario.equals(BDUsuarios.usuario1)) && (contraseña.equals(BDUsuarios.contraseña))){
-			Mantenimiento_Consultar objeto=new Mantenimiento_Consultar();
+			MenuSuperAdmin objeto=new MenuSuperAdmin();
 			objeto.setVisible(true);
 			this.setVisible(false);
 		}
