@@ -292,9 +292,9 @@ public class Ventas_GenerarReportes extends JFrame implements ActionListener {
 		txtS.append("\nPrecio Minimo\t\t: S/ "+ precioMinimo());
 		txtS.append("\nPrecio Mmaximo\t: S/ "+ precioMaximo());
 		
-		txtS.append("\n\nPrecio Promedio\t: "+Contenidopromedio()+" ml");
-		txtS.append("\nPrecio Minimo\t\t: "+ ContenidoMinimo()+" ml");
-		txtS.append("\nPrecio Mmaximo\t: "+ ContenidoMaximo()+" ml");
+		txtS.append("\n\nContenido Promedio\t: "+Contenidopromedio()+" ml");
+		txtS.append("\nContenido Minimo\t\t: "+ ContenidoMinimo()+" ml");
+		txtS.append("\nContenido Mmaximo\t: "+ ContenidoMaximo()+" ml");
 		
 		
 		
