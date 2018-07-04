@@ -311,18 +311,23 @@ public class Ventas_GenerarReportes extends JFrame implements ActionListener {
 			if (BDReportes.cantPerfumesVenta0>BDPerfumes.cantidadOptima){
 				mostrarVentaOptima0();
 			}
-			if (BDReportes.cantPerfumesVenta1>BDPerfumes.cantidadOptima){
+			else if (BDReportes.cantPerfumesVenta1>BDPerfumes.cantidadOptima){
 				mostrarVentaOptima1();
 			}
-			if (BDReportes.cantPerfumesVenta2>BDPerfumes.cantidadOptima){
+			else if (BDReportes.cantPerfumesVenta2>BDPerfumes.cantidadOptima){
 				mostrarVentaOptima2();
 			}
-			if (BDReportes.cantPerfumesVenta3>BDPerfumes.cantidadOptima){
+			else if (BDReportes.cantPerfumesVenta3>BDPerfumes.cantidadOptima){
 				mostrarVentaOptima3();
 			}
-			if (BDReportes.cantPerfumesVenta4>BDPerfumes.cantidadOptima){
+			else if (BDReportes.cantPerfumesVenta4>BDPerfumes.cantidadOptima){
 				mostrarVentaOptima4();
 			}
+			else{
+				txtS.setText("");
+				txtS.append("MENSAJE : No Existe perfumes con venta optima");
+			}
+				
 			
 			break;
 		case 2:
