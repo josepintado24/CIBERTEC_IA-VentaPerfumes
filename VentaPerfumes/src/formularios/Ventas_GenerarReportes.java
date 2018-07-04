@@ -158,11 +158,44 @@ public class Ventas_GenerarReportes extends JFrame implements ActionListener {
 		txtS.append("\n\nNombre\t\t: "+BDPerfumes.nombre4);
 		txtS.append("\nCantidad total de unidades vendidas\t: "+BDReportes.cantPerfumesVenta4+"("+(BDReportes.cantPerfumesVenta4-BDPerfumes.cantidadOptima)+" más que la cantidad óptima)");
 	}
-	
+	double promedio(){
+		return (BDPerfumes.precio0+BDPerfumes.precio1+BDPerfumes.precio1+BDPerfumes.precio2+BDPerfumes.precio3+BDPerfumes.precio4)/5;
+	}
 	void precioRelacionPromedio(){
-		String mensaje="menor al promedio";
-		if ()
+		txtS.append("Precio en relación al promedio\n");
+		txtS.append("\nNombre\t : "+BDPerfumes.nombre0);
+		txtS.append("\nPrecio\t : "+BDPerfumes.precio0+" ( "+evaluarPrecioRelacionPrmedio(BDPerfumes.precio0)+" )");
 		
+		txtS.append("\n\nNombre\t : "+BDPerfumes.nombre1);
+		txtS.append("\nPrecio\t : "+BDPerfumes.precio1+" ( "+evaluarPrecioRelacionPrmedio(BDPerfumes.precio1)+" )");
+		
+
+		txtS.append("\n\nNombre\t : "+BDPerfumes.nombre2);
+		txtS.append("\nPrecio\t : "+BDPerfumes.precio2+" ( "+evaluarPrecioRelacionPrmedio(BDPerfumes.precio2)+" )");
+		
+
+		txtS.append("\n\nNombre\t : "+BDPerfumes.nombre3);
+		txtS.append("\nPrecio\t : "+BDPerfumes.precio3+" ( "+evaluarPrecioRelacionPrmedio(BDPerfumes.precio3)+" )");
+	
+		
+
+		txtS.append("\n\nNombre\t : "+BDPerfumes.nombre4);
+		txtS.append("\nPrecio\t : "+BDPerfumes.precio4+" ( "+evaluarPrecioRelacionPrmedio(BDPerfumes.precio4)+" )");
+		
+		txtS.append("\n\nPrecio Promedio\t : "+promedio());
+		
+	}
+	
+	String evaluarPrecioRelacionPrmedio(double precio){
+		String mensaje="menor al promedio";
+		if (precio>promedio()){
+			mensaje="mayor al promedio";
+		}
+		else if (precio==promedio()){
+			mensaje="igual al promedio";
+		}
+		
+		return mensaje;
 	}
 	
 	
@@ -192,7 +225,7 @@ public class Ventas_GenerarReportes extends JFrame implements ActionListener {
 			
 			break;
 		case 2:
-			
+			precioRelacionPromedio();
 			break;
 		case 3:
 			
