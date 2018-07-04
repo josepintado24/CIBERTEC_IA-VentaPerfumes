@@ -308,19 +308,19 @@ public class Ventas_GenerarReportes extends JFrame implements ActionListener {
 		case 1:
 			txtS.setText("");
 			txtS.append("Perfumes con venta Óptima\n");
-			if (BDReportes.cantPerfumesVenta0>BDPerfumes.cantidadOptima){
+			if (BDReportes.cantPerfumesVenta0>=BDPerfumes.cantidadOptima){
 				mostrarVentaOptima0();
 			}
-			else if (BDReportes.cantPerfumesVenta1>BDPerfumes.cantidadOptima){
+			else if (BDReportes.cantPerfumesVenta1>=BDPerfumes.cantidadOptima){
 				mostrarVentaOptima1();
 			}
-			else if (BDReportes.cantPerfumesVenta2>BDPerfumes.cantidadOptima){
+			else if (BDReportes.cantPerfumesVenta2>=BDPerfumes.cantidadOptima){
 				mostrarVentaOptima2();
 			}
-			else if (BDReportes.cantPerfumesVenta3>BDPerfumes.cantidadOptima){
+			else if (BDReportes.cantPerfumesVenta3>=BDPerfumes.cantidadOptima){
 				mostrarVentaOptima3();
 			}
-			else if (BDReportes.cantPerfumesVenta4>BDPerfumes.cantidadOptima){
+			else if (BDReportes.cantPerfumesVenta4>=BDPerfumes.cantidadOptima){
 				mostrarVentaOptima4();
 			}
 			else{

@@ -250,7 +250,7 @@ public class Ventas_Vender extends JFrame implements ActionListener {
 	
 	String premioSorpresa(){
 		String sorpresa="No corresponde";
-		if (BDReportes.numClientes>=BDPerfumes.numeroClienteSorpresa){
+		if (BDReportes.numClientes==BDPerfumes.numeroClienteSorpresa){
 			sorpresa=BDPerfumes.premioSorpresa;
 		}
 			
@@ -289,7 +289,7 @@ public class Ventas_Vender extends JFrame implements ActionListener {
 	}
 	void mostrar(){
 		llenarReportes();
-		BDReportes.numClientes++;
+		
 		textArea.append("\t\t\tN° Clientes: "+BDReportes.numClientes);
 		textArea.append("\nNombre Perfume\t: "+nombrePerfumeActual);
 		textArea.append("\nPrecio Unitario\t\t: "+precioUnitario);
@@ -305,6 +305,7 @@ public class Ventas_Vender extends JFrame implements ActionListener {
 	
 	
 	protected void actionPerformedBtnGuardar(ActionEvent e) {
+		BDReportes.numClientes++;
 		textArea.setText("");
 		mostrar();
 	}

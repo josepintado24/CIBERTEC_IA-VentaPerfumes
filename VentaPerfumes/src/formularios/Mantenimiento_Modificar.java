@@ -314,7 +314,7 @@ public class Mantenimiento_Modificar extends JFrame implements ActionListener {
 			}
 			lblMensaje.setText("Datos guardados con exito");
 		} catch (Exception e) {
-			lblMensaje.setText(e+"");
+			lblMensaje.setText("Ingrese información correcta");
 		}
 		
 		
