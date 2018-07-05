@@ -42,7 +42,6 @@ public class MenuSuperAdmin extends JDialog implements MouseListener {
 	private JSeparator separator_4;
 	private JSeparator separator_5;
 	private JLabel lbl10;
-	private JLabel lbl9;
 	private JLabel lblMensaje;
 
 	/**
@@ -273,18 +272,8 @@ public class MenuSuperAdmin extends JDialog implements MouseListener {
 		lbl10.setForeground(Color.WHITE);
 		lbl10.setFont(new Font("Yu Gothic UI", Font.BOLD, 12));
 		lbl10.setBackground(new Color(253, 187, 103));
-		lbl10.setBounds(530, 419, 140, 27);
+		lbl10.setBounds(530, 382, 140, 27);
 		panel.add(lbl10);
-		
-		lbl9 = new JLabel("STOK\r\n");
-		lbl9.addMouseListener(this);
-		lbl9.setOpaque(true);
-		lbl9.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl9.setForeground(Color.WHITE);
-		lbl9.setFont(new Font("Yu Gothic UI", Font.BOLD, 12));
-		lbl9.setBackground(new Color(253, 187, 103));
-		lbl9.setBounds(530, 382, 140, 27);
-		panel.add(lbl9);
 		
 		lblMensaje = new JLabel("");
 		lblMensaje.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 15));
@@ -297,9 +286,6 @@ public class MenuSuperAdmin extends JDialog implements MouseListener {
 	public void mouseClicked(MouseEvent arg0) {
 		if (arg0.getSource() == lbl10) {
 			mouseClickedLbl10(arg0);
-		}
-		if (arg0.getSource() == lbl9) {
-			mouseClickedLbl9(arg0);
 		}
 		if (arg0.getSource() == lblVerManualDe) {
 			mouseClickedLblVerManualDe(arg0);
@@ -413,11 +399,6 @@ public class MenuSuperAdmin extends JDialog implements MouseListener {
 			lblVerManualDe.setForeground(new Color(0, 0, 205));
 			lblVerManualDe.setOpaque(false);
 		}
-		if (e.getSource() == lbl9) {
-			mouseEnteredLblMantenimiento_1(e);
-			lbl9.setBackground(new Color (214, 110, 0));
-			lbl9.setOpaque(true);
-		}
 		if (e.getSource() == lbl10) {
 			mouseEnteredLblMantenimiento_1(e);
 			lbl10.setBackground(new Color (214, 110, 0));
@@ -489,10 +470,6 @@ public class MenuSuperAdmin extends JDialog implements MouseListener {
 			lblVerManualDe.setForeground(Color.BLUE);
 			lblVerManualDe.setOpaque(true);
 		}
-		if (e.getSource() == lbl9) {
-			mouseEnteredLblMantenimiento_1(e);
-			lbl9.setBackground(new Color(253, 187, 103));
-		}
 		if (e.getSource() == lbl10) {
 			mouseEnteredLblMantenimiento_1(e);
 			lbl10.setBackground(new Color(253, 187, 103));
@@ -558,10 +535,6 @@ public class MenuSuperAdmin extends JDialog implements MouseListener {
 		
 	}
 	protected void mouseClickedLblVerManualDe(MouseEvent arg0) {
-	}
-	protected void mouseClickedLbl9(MouseEvent arg0) {
-		///Stok ven = new Stok();
-		//ven.setVisible(true);
 	}
 	protected void mouseClickedLbl10(MouseEvent arg0) {
 		lblMensaje.setText("En construcción");
