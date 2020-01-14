@@ -36,18 +36,18 @@
 
 >![ScreenShot](https://raw.githubusercontent.com/josepintado24/CIBERTEC_IA-VentaPerfumes/master/VentaPerfumes/screenshot/PasteURL.jpg)
 
-7. *Ir al boton **Next**.*
+7. *Ir al botón **Next**.*
 
 >![ScreenShot](https://raw.githubusercontent.com/josepintado24/CIBERTEC_IA-VentaPerfumes/master/VentaPerfumes/screenshot/nex01.jpg)
 
-8. *Ir al boton **Next**.*
+8. *Ir al botón **Next**.*
 
 >![ScreenShot](https://raw.githubusercontent.com/josepintado24/CIBERTEC_IA-VentaPerfumes/master/VentaPerfumes/screenshot/nex02.jpg)
 
-9. *Ir al boton **Next**.*
+9. *Ir al botón **Next**.*
 
 >![ScreenShot](https://raw.githubusercontent.com/josepintado24/CIBERTEC_IA-VentaPerfumes/master/VentaPerfumes/screenshot/nex03.jpg)
 
-10. *Ir al boton **Finish**.*
+10. *Ir al botón **Finish**.*
 
 >![ScreenShot](https://raw.githubusercontent.com/josepintado24/CIBERTEC_IA-VentaPerfumes/master/VentaPerfumes/screenshot/finish.jpg)
